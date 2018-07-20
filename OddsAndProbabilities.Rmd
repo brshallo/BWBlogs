@@ -24,11 +24,11 @@ library(DiagrammeR)
 
 # The odd one out in stats class
 
-We grow-up learning proportions, percentages, risks, probabilities... these are the popular concepts by which we come to understand the distribution and plausability of finite discrete outcomes. They are used when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the other hand, you might imagine odds as being relegated to the more shady professional domains of gamblers, sports-betters, and professional statisticians and as something you never needed to understand. In this post I'll describe some of the excellent qualities of odds ratios of odds and why they deserve your attention and should not be thought of as the *odd* one out when discussing event outcomes.
+We grow-up learning proportions, percentages, risks, probabilities... these are the popular concepts through which we understand the distribution and plausability of finite discrete outcomes. They are used when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the other hand, you might imagine odds as being relegated to the more shady professional domains of gamblers and statisticians and as something you never needed to understand. In this post I'll describe some of the excellent qualities of odds and odds ratios and why they deserve your attention and should not be thought of as the *odd* one out when discussing event outcomes.
 
 # Odds are egalitarian
 
-Odds, like proportions, represent a relationship between two possible outcomes. Both represent types of ratios. Say you have a bag with 5 blue marbels and 2 red marble: 
+Odds, like probabilities, can represent a relationship between two possible outcomes. Both can be thought of as ratios. Picutre a bag with 5 red marbels and 2 blue marble. 
 
 ```{r, fig.height = 2}
 create_graph() %>%
