@@ -89,9 +89,11 @@ Some problems lend themselves more naturally to probability and others to odds. 
 
 Odds work great when the idea of an 'outcome of interest' is arbitrary^[E.g. you don't care if the problem is framed as 'plausability of selecting *red* or plausability of selecting *blue*.] and you want to compare your notion of plausability across different contexts^[E.g. how does the plausability of selecting marbles in my bag relate to the plausability of selecting marbles in some other bag?]. Let's change examples to sports. Picture WNBA basketball. There is evidence that home court matters. Let's say the odds of the home team winning are 3 to 2, i.e. for every 3 home wins the away team wins 2. Equivalently there is a 3/5ths chance (60% probability) of the home team winning. Maybe you want to relate this 'impact of home court advantage' across leagues to include college basektball. 
 
-Maybe you have a friend who says 'Oh, college players get rattled easily. The impact of home court advantage is twice as big at the college level compared to the professional level. Given what you know about the professional level, what would be the plausability of winning at college?' 
+Maybe you have a friend who says 'Oh, college players get rattled easily. The impact of home court advantage is twice as big at the college level compared to the professional level.'
 
-At first you get frustrated by your friend not being more specific as to what 'twice as big' means. Then you silently thank him for giving you some room to think through how you could solve the problem. If you take an odds approach, you might formalize the problem your friend gave you as...
+Your other friend chimes in 'Given what you know about the professional level, what would be the plausability of winning at college?' 
+
+At first you get frustrated by your friends for not being specific as to what they mean by 'twice as big an impact.' Then you begin to appreciate their vagueness as this gives you a chance to test out a few possible approaches. If you take an odds approach, you might formalize the problem your friend gave you as...
 
 * *Already known:* odds of winning at home in the WNBA are 3 to 2.
 * *New information from friend:* The ratio of the odds of winning at home in the WNBA vs. in college is 2 to 1. 
