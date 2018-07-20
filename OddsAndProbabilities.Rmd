@@ -96,9 +96,9 @@ Your other friend chimes in 'Given what you know about the professional level, w
 At first you get frustrated by your friends for not being specific as to what they mean by 'twice as big an impact.' Then you begin to appreciate their vagueness as this gives you a chance to test out a few possible approaches. If you take an odds approach, you might formalize the problem your friend gave you as...
 
 * *Already known:* odds of winning at home in the WNBA are 3 to 2.
-* *New information from friend:* The ratio of the odds of winning at home in the WNBA vs. in college is 2 to 1. 
+* *New information from friend:* The ratio of home wins to losses in the WNBA vs. in college is 2 to 1. 
 * *Question she is asking:* What are the odds of winning at home in college?" 
-(PUT THE ABOVE INTO AN ODDS RATIO EQUATION)
+(PUT THE ABOVE INTO AN EQUATION)
 
 To calculate the odds of winning at home in college you simply double the  ratio of winning at home in the WNBA.
 ```{r}
@@ -125,9 +125,10 @@ It's less clear how you might formalize your friend's comment as probabilities. 
 
 You could flip the problem and instead frame it as 'Chance of *losing* at home in college'. Chance of losing at home is 2/5ths, halved becomes 1/5th. Transitively, the chance of winning must be 4/5ths. While you got an answer you can give your friend, the lack of symmetry at the start leaves you wondering if your answers to similar problems would remain consistent.
 
-Your friend though wants to try another example, 'On second thought, home court advantage is only a third greater in college than the WNBA.'
+Your friend changes things, 'On second thought, home court advantage is only a third greater in college than the WNBA.'
 
 Replace the relevant bullet from before to instead be:
+
 * *New information from friend:* The ratio of the odds of winning at home in the WNBA vs. in college is 4 to 3. 
 
 ```{r}
@@ -136,7 +137,7 @@ Replace the relevant bullet from before to instead be:
 
 This simplifies to a 2:1 odds of winning at home in college. Try on your own to invert the problem and solve for the odds of losing at home^[You should arrive at an odds of 1 : 2.].
 
-For probability, if we start at 3/5th chance of WNBA home winning and increase this by a third (3/5)\*(4/3) (MAKE THIS A CHART), we get a chance of winning of 4/5ths, i.e. 80%. If, we framed the problem from the perspective of losing at home in the WNBA, a 2/5ths chance, the college loss rate becomes (2/5)\*(3/4) = 3/10, i.e. 30% loss rate and transitively a 70% win rate.
+For probability, if we start at 3/5th chance of WNBA home winning and increase this by a third (3/5)\*(4/3) (MAKE THIS A CHART), we get a chance of winning of 4/5ths, i.e. 80%. If we framed the problem from the perspective of losing at home in the WNBA, a 2/5ths chance, the college loss rate becomes (2/5)\*(3/4) = 3/10, i.e. 30% loss rate, transitively a 70% win rate.
 
 ```{r}
 # chart
@@ -147,8 +148,8 @@ Our final college basketball home win rate came out to either 80% or 70%, depend
 
 # Many variables
 
-*When things get complicated, odds stay ~simple*
-There are other factors that might affect the plausability of winning at home other than college/professional level (e.g. 'quality of coach', 'distance away team traveled', etc.). Maybe you want to build a model that takes these into account. The ease with which odds can be transformed to compare scenarios makes them a good starting place to build sophisticated methods to handle this scenario. In the next post I'll segue into some additional transformations beyond odds and ratios of odds that set them up for modeling the plausability of event outcomes across multiple variables. 
+*When things get complicated, odds stay ~simple*  
+There are other factors that might affect the plausability of winning at home other than college/professional level (e.g. 'quality of coach', 'distance away team traveled', etc.). Maybe you want to build a model that takes these into account. The ease with which odds can be transformed to compare scenarios makes them a good starting place to build more complicated models that still facilitate comparisons across contexts. In the next post I'll segue into some additional transformations you can apply to the odds and ratios of odds that set them up for modeling the plausability of event outcomes across multiple variables. 
 
 # Probabilities are great too
 
