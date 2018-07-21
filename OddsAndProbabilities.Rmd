@@ -1,8 +1,8 @@
 ---
 title: "The odd one out in stats class"
-date: "2018-07-20"
-name: Bryan Shalloway and Will Burton
-subtitle: "`r paste('Last updated: ', format(Sys.time(), '%Y-%m-%d'))`"
+subtitle: "2018-07-20"
+date: "`r paste('Last updated: ', format(Sys.time(), '%Y-%m-%d'))`"
+author: "Bryan Shalloway and Will Burton"
 output: 
   html_document:
     code_folding: hide
@@ -56,12 +56,13 @@ create_graph() %>%
   render_graph()
 
 # change to show a literal bag with gganimate moving things
+
 ```
 
 Odds could be used to represent the ratio between red and blue marbles. Probability could represent the fraction of all marbles that are red^[Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.]. 
 
-$$O(R) = R/B$$  
-$$P(R) = R/(B+R)$$  
+$$O(R) = \frac{R}{B}$$  
+$$P(R) = \frac{R}{B+R}$$  
 
 *Ratio for odds*^[You could say there are 5 to 2 (5:2) odds of selecting a red marble at random from the bag or, if you ran this exercise many times, you'd expect to select 2.5 times as many red marbles as blue marbles.]:
 
@@ -97,13 +98,13 @@ For odds (when there are only two possible outcomes^[I'll only be discussing pro
 
 You can switch between odds and probabilities using the function below: 
 
-$$O = P/(1-P)$$
+$$O = \frac{P}{1-P}$$
 
 However, the style of thinking for odds emphasizes the relationship *between* the frequencies of possible event, whereas probabilities emphasize the relative frequency of a *particular* event.
 
-(SIDE NOTE: I like to think of odds as being more egalitarian because, in the case of a binary event outcome, both outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected class affects both sides. Hence if you believe in things like equality and freedom you should be a fan of odds and odds ratios.) 
+(*Side note*: I like to think of odds as being more egalitarian because, in the case of a binary outcome, both possible outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected outcome affects both sides. Hence, if you believe in things like equality and freedom you should be a fan of odds and odds ratios!) 
 
-Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Types of problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
+Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Other problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
 
 # Different contexts
 
@@ -205,7 +206,7 @@ $$O(A_1:A_2|B) = \frac{P(B|A_1)}{P(B|A_2)}$$
 
 Ratios of odds are helpful for comparing impacts of variables when the target outcome falls into a class such as win/loss, red/blue, etc. Perhaps though you have a problem where an event can happen multiple times. For example, how many times will the mascot start dancing during the game? Relevant variables might be weight of custome, playing a rival/not a rival, etc. The impact of variables for this type of problem is typically best understood as the ratio of probabilities^[The classification and counting problems represent the differences between logistic and poisson regression.] - but more on this in the future^[I may or may not also discuss the differences between the logit and probit transformations and the respective advantages of each.]...
 
-## Communicating odds
+# Communicating odds
 
 A great advantage of using probabilities is that people know how to communicate with them. If you want to try and communicate 'odds' to someone who is new to the concept, a helpful heuristic is to frame it in the template 'for every ___ ___, there are ___ ___." E.g. "For every 3 home wins, there are 2 home losses", AKA the odds of winning at home are 3 : 2.  If you need to speak about odds ratios you could tweak this form slightly, e.g. "The ratio of home wins to home losses is twice as high in college compared to professional leagues." Keeping the context of the problem central to the explanation is central to helping new learners/colleagues understand them. And the concept of odds is too important not to understand!
 
