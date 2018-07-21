@@ -1,5 +1,5 @@
 ---
-title: "Why odds shouldn't be the 'odd one out' when thinking about event outcomes"
+title: "The odd one out in stats class"
 date: "2018-07-20"
 name: Bryan Shalloway and Will Burton
 subtitle: "`r paste('Last updated: ', format(Sys.time(), '%Y-%m-%d'))`"
@@ -22,20 +22,29 @@ library(tidyverse)
 library(DiagrammeR)
 ```
 
-# The odd one out in stats class
+In Hunger Games, they don't say "May the *probability* be ever in your favor." It's
+```{r}
+# GIF of hunger games
+```
 
-We grow-up learning proportions/risks/probabilities... we encounter them when a teacher gives a grade on a test or a doctor describes the risk of an illness. 'Odds,' on the other hand, you might imagine as relevant only to the shady domains of gambling and advanced statistics. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you finish this post with an understanding of the basic concept, some hints at a general class of problems where the 'odds way of defining a problem' can be useful, and a simple heuristic for how to communicate in terms of 'odds' with the rest of the world[^1].
+The odds represent a more ancient form of understanding outcomes. Yet, in most useful contexts, our culture has largely forgotten them and suplanted 'odds' with 'probabilities'. In our modern concsciousness 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games.
 
-[^1]: Fun fact: according to Wikipedia humanity conceived of odds far before probability. Check-out this quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's: 
+See this quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's: 
     
     >"Knew that we ventured on such dangerous seas  
-    >That if we wrought out life 'twas ten to one;"  
-    
-    Doesn't that have a better ring to it than "twas one out of eleven."
+    >That if we wrought out life 'twas ten to one;"
+
+You can imagine if he were writing today this would read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. However other than for games and poetry, odds represent a very useful way of thinking. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post...
+
+* able to describe a TRUE/FALSE relationship in terms of odds. 
+* with an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
+* having a simple heuristic for how to communicate in terms of 'odds' with the rest of the world[^1].
+
+[^1]: Fun fact: according to Wikipedia humanity conceived of odds far before probability. Check-out
 
 # Odds & probabilities with 2 potential outcomes
 
-Picture a bag with 5 red marbels and 2 blue marbles that has been mixed thoroughly. 
+Imagine a bag with 5 red marbels and 2 blue marbles that has been mixed thoroughly. 
 
 ```{r, fig.height = 2}
 create_graph() %>%
@@ -52,10 +61,10 @@ create_graph() %>%
 # change to show a literal bag with gganimate moving things
 ```
 
-Odds could be used to represent the ratio between red and blue marbles (or blue and red marbles). Probability could represent the fraction of all marbles that are red (or the fraction of all marbles that are blue). Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.
+Odds could be used to represent the ratio between red and blue marbles. Probability could represent the fraction of all marbles that are red. Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.
 
-$$O(B) = B/R$$  
-$$P(B) = B/(B+R)$$  
+$$O(R) = R/B$$  
+$$P(R) = R/(B+R)$$  
 
 *Ratio for odds*^[You could say there are 5 to 2 (5:2) odds of selecting a red marble at random from the bag or, if you ran this exercise many times, you'd expect to select 2.5 times as many red marbles as blue marbles.]:
 
@@ -191,3 +200,8 @@ Ratios of odds are helpful for comparing impacts of variables when the target ou
 A great advantage of using probabilities is that people know how to communicate with them. If you want to try and communicate 'odds' to someone who is new to the concept, I think a helpful heuristic is to frame it in the template 'for every ___ ___, there are ___ ___." E.g. "For every 3 home wins, there are 2 home losses", AKA the odds of winning at home are 3 : 2.  If you need to speak about odds ratios you could tweak this form slightly, e.g. "The ratio of home wins to home losses is twice as high in college compared to professional leagues." Keeping the context of the problem central to the explanation is central to helping new learners/colleagues understand them. And the concept of odds is too important not to understand!
 
 
+# Appendix
+
+## Note on what American betting odds are
+
+Some of you may have hoped I'd describe what -100, +200, etc. means.
