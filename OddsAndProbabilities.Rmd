@@ -24,14 +24,18 @@ library(DiagrammeR)
 
 # The odd one out in stats class
 
-We grow-up learning proportions, percentages, risks, probabilities... these are the popular concepts through which we understand the distribution and plausability of finite discrete outcomes. They are used when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the other hand, you might imagine odds as being relegated to the more shady professional domains of gamblers and statisticians and think it as a concept you don't need to understand. In this post I'll describe some of the excellent qualities of odds and odds ratios and why they deserve your attention and should not be thought of as the *odd* one out when discussing event outcomes[^1].
+We grow-up learning proportions/risks/probabilities... we encounter them when a teacher gives a grade on a test or a doctor describes the risk of an illness. 'Odds,' on the other hand, you might imagine as relevant only to the shady domains of gambling and advanced statistics. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you finish this post with an understanding of the basic concept, some hints at a general class of problems where the 'odds way of defining a problem' can be useful, and a simple heuristic for how to communicate in terms of 'odds' with the rest of the world[^1].
 
-[^1]: Fun fact, according to Wikipedia humanity conceived of odds far before they developed notions of probability. Check-out this quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's, "Knew that we ventured on such dangerous seas
-That if we wrought out life 'twas ten to one." Perhaps that quote describes humanities fate if we forget the concept of odds.
+[^1]: Fun fact: according to Wikipedia humanity conceived of odds far before probability. Check-out this quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's: 
+    
+    >"Knew that we ventured on such dangerous seas  
+    >That if we wrought out life 'twas ten to one;"  
+    
+    Doesn't that have a better ring to it than "twas one out of eleven."
 
-# Odds and probabilities are ratios
+# Odds & probabilities with 2 potential outcomes
 
-Odds, like probabilities, can represent a relationship between two possible outcomes. Both can be thought of as ratios. Picture a bag with 5 red marbels and 2 blue marbles. 
+Picture a bag with 5 red marbels and 2 blue marbles that has been mixed thoroughly. 
 
 ```{r, fig.height = 2}
 create_graph() %>%
@@ -45,10 +49,13 @@ create_graph() %>%
                                   fontsize = 5)) %>% 
   render_graph()
 
-
+# change to show a literal bag with gganimate moving things
 ```
 
-You plan to select a single marble from the bag and want to conceptualize the plausability of the possible outcomes. Odds could be used to represent the ratio between red and blue outcomes. Probability could represent the ratio between red and red + blue outcomes or blue and blue + red outcomes.
+Odds could be used to represent the ratio between red and blue marbles (or blue and red marbles). Probability could represent the fraction of all marbles that are red (or the fraction of all marbles that are blue). Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.
+
+$$O(B) = B/R$$  
+$$P(B) = B/(B+R)$$  
 
 *Ratio for odds*^[You could say there are 5 to 2 (5:2) odds of selecting a red marble at random from the bag or, if you ran this exercise many times, you'd expect to select 2.5 times as many red marbles as blue marbles.]:
 
@@ -65,7 +72,7 @@ tibble(color = c(rep("red", 5), rep("blue", 2)),
   
 ```
 
-*Ratio for probability*^[You'd say there is a 5 / 7ths chance of selecting a red marble, or that you would select a red marble ~71% of the time.]:
+*Fraction for probability*^[You'd say there is a 5 / 7ths chance of selecting a red marble, or that you would select a red marble ~71% of the time.]:
 
 ```{r, fig.height = 2, fig.width = 2}
 tibble(color = c(rep("red", 5), rep("red", 5), rep("blue", 2)),
@@ -80,9 +87,9 @@ tibble(color = c(rep("red", 5), rep("red", 5), rep("blue", 2)),
   
 ```
 
-For odds, each type of outcome could be thought of as existing *either* in the numerator or the denominator. For probabilities, the class of interest (e.g. red marbles) influences both^[I like to think of odds as being more egalitarian because both outcomes get their own side of the ratio. Probabilities are 'outcome of interest' centric in that the selected class affects both sides. Does this mean that if you believe in things like equality and freedom you should be a fan of odds and odds ratios? I think it does.]. 
+For odds (when there are only two possible outcomes^[I'll only be discussing problems with two possible outcomes.]) each outcome could be thought of as existing *either* in the numerator or in the denominator. For probabilities, the class of interest (e.g. red marbles) influences both sides^[I like to think of odds as being more egalitarian because both outcomes get their own side of the ratio. Probabilities are 'outcome of interest' centric in that the selected class affects both sides. Hence if you believe in things like equality and freedom you should be a fan of odds and odds ratios.] ^[While you can switch between them, the style of thinking for odds emphasizes the relationship between the frequency of each possible event, whereas probabilities emphasize the relative frequency of a particular event.]. 
 
-Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Types of problems]. For the remainder of the post I'll focus on where odds suggests an intuitive and consistent framework for conceptualizing a common problem in event outcomes^[Afterall odds are the ones that need PR help.].
+Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Types of problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
 
 # Different contexts
 
@@ -90,7 +97,7 @@ Odds are often helpful when the 'outcome of interest' is arbitrary^[E.g. you don
 
 Perhaps you have a friend who says 'Oh, college players get rattled easily. The impact of home court advantage in college is twice what it is at the professional level.'
 
-Another friend then challenges you, 'Given what you know about events at the professional level, what would be the plausability of winning at home in college?'^[At first you get frustrated with your friends for not being specific as to what they mean by 'twice as big an impact.' Then you start to appreciate their vagueness as it gives you the latitude to try out a few potential framings.] 
+Another friend then challenges you, 'Given what you know about events at the professional level, what would be the relationship between winning and losing at home in college?'^[At first you get frustrated with your friends for not being specific as to what they mean by 'twice as big an impact.' Then you start to appreciate their vagueness as it gives you the latitude to try out a few potential framings.] 
 
 If you take an odds approach, you might formalize the problem your friends gave you as...
 
@@ -126,11 +133,11 @@ It's less clear how you might formalize your friend's comment as probabilities. 
 # :-( you can't have a probability greater than 1
 ```
 
-You could flip the problem and instead frame it as 'What is the chance of *losing* at home in college'. Chance of losing at home is 2/5ths, halved becomes 1/5th. Transitively, the chance of winning must be 4/5ths. While you have an answer, the lack of symmetry at the start leaves you wondering if this method would produce consistent results on similar problems.
+You could flip the problem and instead frame it as 'What is the chance of *losing* at home in college'. Chance of losing at home is 2/5ths, halved becomes 1/5th. Therefore, the chance of winning would be 4/5ths. While you have an answer, the lack of symmetry at the start leaves you wondering if this approach produces consistent resultss.
 
-Your friend changes things, 'On second thought, home court advantage is only a third mor important in college than in the WNBA.'
+Your friend changes things, 'On second thought, home court advantage is only a third more important in college than in the WNBA.'
 
-Replace the relevant bullet from before to instead be:
+For odds, replace the relevant bullet from before to instead be:
 
 * *New information from friend:* The ratio of the odds of winning at home in the WNBA vs. in college is 4 to 3. 
 
@@ -138,7 +145,7 @@ Replace the relevant bullet from before to instead be:
 # chart showing * multiply by 4 / 3
 ```
 
-This simplifies to a 2:1 odds of winning at home in college. Try on your own to invert the problem and solve for the odds of losing at home^[You should arrive at an odds of 1 : 2.].
+This simplifies to a 2:1 odds of winning at home in college. On your own, try to invert the problem and solve for the odds of losing at home^[You should arrive at an odds of 1 : 2.].
 
 For probability, we start at 3/5th chance of WNBA home winning and increase this by a third:
 
@@ -146,7 +153,9 @@ For probability, we start at 3/5th chance of WNBA home winning and increase this
 # (3/5)\*(4/3) (MAKE THIS A CHART), 
 ```
 
-This simplifies to a chance of winning of 4/5ths^[i.e. 80%]. If we framed the problem at the start from the perspective of losing at home in the WNBA, a 2/5ths chance, the college loss rate becomes:
+This simplifies to a chance of winning of 4/5ths^[i.e. 80%]. 
+
+If we began the problem from the perspective of losing at home, we'd start with a 2/5ths chance of losing in the WNBA, the college loss rate becomes:
 
 ```{r}
 #  (2/5)\*(3/4) = 3/10,
@@ -159,13 +168,13 @@ Our college basketball home win rate came out to either 80% or 70%. Our outcome 
 
 # Many variables
 
-There are other factors that might affect the plausability of winning or losing at home other than college/professional level (e.g. 'quality of coach', 'distance away team traveled', etc.). Maybe you want to build a model that takes these into account. The ease with which odds can be transformed to compare variables makes them a good starting place ^[In the future I'll segue into some additional transformations you can apply to the ratios of odds that allow for more sophisticated modeling of the plausability of event outcomes across multiple variables, i.e. I'll be talking about logistic regression.]. 
+There are other factors that might affect the relationship between winning or losing at home other than college/professional level (e.g. 'quality of coach', 'distance away team traveled', etc.). Maybe you want to build a model that takes these into account. The ease with which odds can be transformed to compare variables makes them a good starting place ^[In the future I'll segue into some additional transformations you can apply to the ratios of odds that allow for more sophisticated modeling of the plausability of event outcomes across multiple variables, i.e. I'll be talking about logistic regression.]. 
 
 # Other problems
 
 My discussion of what we mean when we say 'twice as big an effect on home winning' has been a little loose. For a more rigorous discussion of how to try and formalize a similar comment, check-out this Stack Exchange thread: https://math.stackexchange.com/questions/761504/what-does-twice-as-likely-mean .
 
-To be clear, odds don't always make problems more simple. For example, Bayes' function^[Maybe the most important function in statistics] is perhaps easier to follow in it's traditional probability form:
+Odds don't always make problems more simple. For example, Bayes' function^[Maybe the most important function in statistics] is perhaps easier to follow in it's traditional probability form:
 
 Probability form:
 $$P(A|B) = (P(B|A)*P(A))/(P(B))$$
