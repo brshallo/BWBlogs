@@ -22,18 +22,20 @@ library(tidyverse)
 library(DiagrammeR)
 ```
 
-We grow up learning proportions, percentages, risks, probabilities.  You encounter them when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the otherhand, we largely see odds in contexts like:
+We grow up learning proportions, percentages, risks, probabilities.  You encounter them when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the otherhand we rarely interact with odds and when we do it's largely in contexts like:
 
  ![](may-the-odds-be-ever-in-your-favor.jpg) 
 
-So that, in our modern cultural concsciousness 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games. The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. 
+So that, in our modern cultural concsciousness, 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games. 
 
-See quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's:  
+The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. See quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's:  
 
 >Knew that we ventured on such dangerous seas  
 >That if we wrought out life 'twas ten to one;
 
-You can imagine if he were writing today the second line  might read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. Beyond games and poetry, odds represent a useful method for relating event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
+You can imagine if he were writing today the second line  might read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. 
+
+Though even outside of games and poetry, 'odds' represent a useful method for relating event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
 
 * an ability to describe a TRUE/FALSE relationship in terms of odds. 
 * an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
@@ -194,7 +196,7 @@ There are other factors that might affect the relationship between winning or lo
 
 My discussion of what we mean when we say 'twice as big an effect on home winning' has been a little loose. For a more rigorous discussion of how to try and formalize a similar comment, check-out this Stack Exchange thread: https://math.stackexchange.com/questions/761504/what-does-twice-as-likely-mean .
 
-Odds don't always make problems more simple. For example, Bayes' function^[Maybe the most important function in statistics] is perhaps easier to follow in it's traditional probability form:
+Odds don't always make problems more simple. For example, Bayes' function^[Maybe the most important function in statistics.] is perhaps easier to follow in it's traditional probability form:
 
 Probability form:
 $$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$$
