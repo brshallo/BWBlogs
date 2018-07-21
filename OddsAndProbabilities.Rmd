@@ -22,19 +22,20 @@ library(tidyverse)
 library(DiagrammeR)
 ```
 
-In Hunger Games, they don't say "May the *probability* be ever in your favor." It's
+We grow-up learning proportions, percentages, risks, probabilities.  You encounter them when a teacher gives a grade on a test or a doctor describes the risk of an illness. On the otherhand, we largely see odds in contexts like:
+
 ```{r}
-# GIF of hunger games
+# GIF of hunger games 'May the odds be ever in your favor'
 ```
 
-The odds represent a more ancient form of understanding outcomes. Yet, in most useful contexts, our culture has largely forgotten them and suplanted 'odds' with 'probabilities'. In our modern concsciousness 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games.
+So that, in our modern cultural concsciousness 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games. The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, in most useful contexts, our culture has largely forgotten them and supplanted 'odds' with 'probabilities'. 
 
 See this quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's: 
     
     >"Knew that we ventured on such dangerous seas  
     >That if we wrought out life 'twas ten to one;"
 
-You can imagine if he were writing today this would read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. However other than for games and poetry, odds represent a very useful way of thinking. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post...
+You can imagine if he were writing today this would read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. However, beyond games and poetry, odds still represent a useful method for relating outcomes. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post...
 
 * able to describe a TRUE/FALSE relationship in terms of odds. 
 * with an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
