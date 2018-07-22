@@ -42,7 +42,9 @@ Though beyond betting and playwriting, 'odds' are a generally useful method for 
 
 # Different contexts
 
-Say you're making chocolate milk and use 9 parts milk for every 1 part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would be slightly more complex. In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
+Say you're making chocolate milk and use 9 parts milk for every 1 part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would be slightly more complex. 
+
+In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
 
 ![https://www.flickr.com/photos/avlxyz/38295415905](chcolate-milk.jpg) 
 
@@ -216,11 +218,13 @@ tibble(color = c(rep("red", 5), rep("red", 5), rep("blue", 2)),
 
 For odds (when there are only two possible outcomes^[I'll only be discussing problems with two possible outcomes.]) each outcome could be thought of as existing *either* in the numerator or in the denominator. For probabilities, the class of interest (e.g. red marbles) influences both sides.
 
+(*Sidenote*: I like to think of odds as being more egalitarian because, in the case of a binary outcome, both possible outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected outcome affects both sides. Hence, if you believe in things like equality and freedom you should be a fan of odds and odds ratios!)
+
 You can switch between odds and probabilities using the function below: 
 
 $$O = \frac{P}{1-P}$$
 
-However, the style of thinking for odds emphasizes the relationship *between* the frequencies of possible event, whereas probabilities emphasizes the relative frequency of a *particular* event^[I like to think of odds as being more egalitarian because, in the case of a binary outcome, both possible outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected outcome affects both sides. Hence, if you believe in things like equality and freedom you should be a fan of odds and odds ratios!].
+However, the style of thinking for odds emphasizes the relationship *between* the frequencies of possible event, whereas probabilities emphasizes the relative frequency of a *particular* event.
 
 Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Other problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
 
