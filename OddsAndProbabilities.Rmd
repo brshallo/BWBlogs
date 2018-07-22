@@ -30,15 +30,15 @@ So that, in our modern cultural concsciousness, 'odds' are relegated to the shad
 The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. See quote from Shakespeare's *Henry IV, Part II* dating back to the late 1500's:  
 
 >Knew that we ventured on such dangerous seas  
->That if we wrought out life 'twas ten to one;
+>That if we wrought out life 'twas *ten to one*;
 
-You can imagine if he were writing today the second line  might read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. 
+You can imagine if he were writing today the second line  might read "'twas *one out of eleven*;" which doesn't have quite the same ring to it. 
 
 Though beyond betting and playwriting, 'odds' are a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
 
 * an ability to describe the relationship between binary outcomes in terms of odds. If you're new to odds, start here [Ratios/fractions of events] before moving on to the next section..
 * an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
-* a simple heuristic for how to communicate in terms of 'odds' with the rest of the world.
+* a simple heuristic for how to communicate 'odds' to the rest of the world.
 
 # Different contexts
 
