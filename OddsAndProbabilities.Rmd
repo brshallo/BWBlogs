@@ -27,31 +27,31 @@ We grow up learning proportions, percentages, risks, probabilities.  You encount
 
 So that, in our modern cultural concsciousness, 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games. 
 
-The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. See quote from Shakespeare's *Henry IV, Part II* dating back to the 1500's:  
+The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. See quote from Shakespeare's *Henry IV, Part II* dating back to the late 1500's:  
 
 >Knew that we ventured on such dangerous seas  
 >That if we wrought out life 'twas ten to one;
 
 You can imagine if he were writing today the second line  might read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. 
 
-Though beyond betting and playwriting, 'odds' represents a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
+Though beyond betting and playwriting, 'odds' are a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
 
-* an ability to describe a TRUE/FALSE relationship in terms of odds. 
+* an ability to describe the relationship between binary outcomes in terms of odds. If you're new to odds, start here [Ratios/fractions of events] before moving on to the next section..
 * an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
 * a simple heuristic for how to communicate in terms of 'odds' with the rest of the world.
 
 # Different contexts
 
-Say you're making chocolate milk and use 9 parts milk for every one part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would have been slightly more complex. In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
+Say you're making chocolate milk and use 9 parts milk for every 1 part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would be slightly more complex. In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
 
 ![https://www.flickr.com/photos/avlxyz/38295415905](chcolate-milk.jpg) 
 
 Odds are often helpful for conceptualizing outcomes when both:
 
 * the 'outcome of interest' is arbitrary (e.g. you don't care if the problem is framed in terms of parts *milk* or parts *chocolate*.)
-* you want to compare your ratio of outcomes across different contexts (e.g. how does the distribution of milk:chocolate in my cup relate to the distribution in some other cup?)
+* you want to compare your ratio of outcomes across different contexts (e.g. how does the distribution of *milk*:*chocolate* in *my cup* relate to the distribution in some *other cup*?)
 
-Let's change examples to sports and substitue parts milk:chocolate for parts winning:losing. Picture WNBA basketball. There is evidence that home court matters. Let's say the odds of the home team winning are 3 to 2, i.e. for every 3 home team wins the away team wins 2. Equivalently there is a $\frac{3}{5}ths$ chance (60% probability) of the home team winning. Maybe you want to compare this 'impact of home court advantage' across leagues to college basektball. 
+Let's change examples to sports and substitue parts *milk*:*chocolate* for parts *winning*:*losing* when playing at home. Picture WNBA basketball. There is evidence that home court matters. Let's say the odds of the home team winning are 3 to 2, i.e. for every 3 home team wins the away team wins 2. Equivalently there is a $\frac{3}{5}ths$ chance (60% probability) of the home team winning. Maybe you want to compare this 'impact of home court advantage' across leagues to college basektball. 
 
 Perhaps you have a friend who says "Oh, college players get rattled easily. The impact of home court advantage in college is twice what it is at the professional level."
 
@@ -158,7 +158,7 @@ Before it's too late.
 
 # Appendix
 
-# Ratios/fractions of events
+## Ratios/fractions of events
 (THIS SECTION WAS BEFORE THE SECTION [Different contexts] BUT IT FELT UNNECESSARY.)
 
 Imagine a bag with 5 red marbles and 2 blue marbles that has been mixed thoroughly. 
