@@ -1,8 +1,7 @@
 ---
 title: "The odd one out in stats class"
-subtitle: "2018-07-20"
+subtitle: "Written: 2018-07-20"
 date: "`r paste('Last updated: ', format(Sys.time(), '%Y-%m-%d'))`"
-author: "Bryan Shalloway and Will Burton"
 output: 
   html_document:
     code_folding: hide
@@ -35,87 +34,24 @@ The odds represent a more ancient form of understanding the relationship between
 
 You can imagine if he were writing today the second line  might read "That if we wrought out life 'twas one out of eleven;" which doesn't have quite the same ring to it. 
 
-Though even outside of games and poetry, 'odds' represent a useful method for relating event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
+Though beyond betting and playwriting, 'odds' represents a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
 
 * an ability to describe a TRUE/FALSE relationship in terms of odds. 
 * an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
 * a simple heuristic for how to communicate in terms of 'odds' with the rest of the world.
 
-# Ratios/fractions of events
-
-Imagine a bag with 5 red marbles and 2 blue marbles that has been mixed thoroughly. 
-
-```{r, fig.height = 2}
-create_graph() %>%
-  add_n_nodes(5, 
-              label = "I am red!!",
-              node_aes = node_aes(fillcolor = "red",
-                                  fontsize = 5)) %>% 
-  add_n_nodes(2, 
-              label = "I am blue :-(",
-              node_aes = node_aes(fillcolor = "blue",
-                                  fontsize = 5)) %>% 
-  render_graph()
-
-# change to show a literal bag with gganimate moving things
-
-```
-
-Odds could be used to represent the ratio between red and blue marbles. Probability could represent the fraction of all marbles that are red^[Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.]. 
-
-$$O(R) = \frac{R}{B}$$  
-$$P(R) = \frac{R}{B+R}$$  
-
-*Ratio for odds*^[You could say there are 5 to 2 (5:2) odds of selecting a red marble at random from the bag or, if you ran this exercise many times, you'd expect to select 2.5 times as many red marbles as blue marbles.]:
-
-```{r, fig.height = 2, fig.width = 2}
-tibble(color = c(rep("red", 5), rep("blue", 2)),
-       y = c(rep(.5, 5), rep(-.5, 2)), 
-       x = c(1:5, 2.5, 3.5)) %>% 
-  ggplot(aes(x = x, y = y, colour = color, size = 10))+
-  geom_hline(yintercept = 0, size = 3, colour = "black")+
-  geom_point()+
-  theme_void()+
-  guides(size = "none", colour = "none")+
-  scale_colour_manual(values = c(blue = "blue", red = "red"))
-  
-```
-
-*Fraction for probability*^[You'd say there is a $\frac{5}{7}ths$ chance of selecting a red marble, or that you would select a red marble ~71% of the time.]:
-
-```{r, fig.height = 2, fig.width = 2}
-tibble(color = c(rep("red", 5), rep("red", 5), rep("blue", 2)),
-       y = c(rep(.5, 5), rep(-.5, 7)), 
-       x = c(1:5, seq(0, 6, length.out = 7))) %>% 
-  ggplot(aes(x = x, y = y, colour = color, size = 10))+
-  geom_hline(yintercept = 0, size = 3, colour = "black")+
-  geom_point()+
-  theme_void()+
-  guides(size = "none", colour = "none")+
-  scale_colour_manual(values = c(blue = "blue", red = "red"))
-  
-```
-
-For odds (when there are only two possible outcomes^[I'll only be discussing problems with two possible outcomes.]) each outcome could be thought of as existing *either* in the numerator or in the denominator. For probabilities, the class of interest (e.g. red marbles) influences both sides.
-
-You can switch between odds and probabilities using the function below: 
-
-$$O = \frac{P}{1-P}$$
-
-However, the style of thinking for odds emphasizes the relationship *between* the frequencies of possible event, whereas probabilities emphasize the relative frequency of a *particular* event.
-
-(*Side note*: I like to think of odds as being more egalitarian because, in the case of a binary outcome, both possible outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected outcome affects both sides. Hence, if you believe in things like equality and freedom you should be a fan of odds and odds ratios!) 
-
-Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Other problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
-
 # Different contexts
 
-Odds are often helpful when both:
+Say you're making chocolate milk and use 9 parts milk for every one part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would have been slightly more complex. In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
 
-* the 'outcome of interest' is arbitrary (e.g. you don't care if the problem is framed in terms of *red* marbles or in terms of *blue* marbles.)
-* you want to compare your ratio of outcomes across different contexts (e.g. how do the distribution of red/blue marbles in my bag relate to the distribution in some other bag?.
+![https://www.flickr.com/photos/avlxyz/38295415905](chcolate-milk.jpg) 
 
-Let's change examples to sports. Picture WNBA basketball. There is evidence that home court matters. Let's say the odds of the home team winning are 3 to 2, i.e. for every 3 home team wins the away team wins 2. Equivalently there is a $\frac{3}{5}ths$ chance (60% probability) of the home team winning. Maybe you want to compare this 'impact of home court advantage' across leagues to college basektball. 
+Odds are often helpful for conceptualizing outcomes when both:
+
+* the 'outcome of interest' is arbitrary (e.g. you don't care if the problem is framed in terms of parts *milk* or parts *chocolate*.)
+* you want to compare your ratio of outcomes across different contexts (e.g. how does the distribution of milk:chocolate in my cup relate to the distribution in some other cup?)
+
+Let's change examples to sports and substitue parts milk:chocolate for parts winning:losing. Picture WNBA basketball. There is evidence that home court matters. Let's say the odds of the home team winning are 3 to 2, i.e. for every 3 home team wins the away team wins 2. Equivalently there is a $\frac{3}{5}ths$ chance (60% probability) of the home team winning. Maybe you want to compare this 'impact of home court advantage' across leagues to college basektball. 
 
 Perhaps you have a friend who says "Oh, college players get rattled easily. The impact of home court advantage in college is twice what it is at the professional level."
 
@@ -221,6 +157,72 @@ Before it's too late.
 ![https://dorksideoftheforce.com/2016/08/22/fan-watches-force-awakens-first-time-reacts-han-solos-death/](han-solo-death.jpg)
 
 # Appendix
+
+# Ratios/fractions of events
+(THIS SECTION WAS BEFORE THE SECTION [Different contexts] BUT IT FELT UNNECESSARY.)
+
+Imagine a bag with 5 red marbles and 2 blue marbles that has been mixed thoroughly. 
+
+```{r, fig.height = 2}
+create_graph() %>%
+  add_n_nodes(5, 
+              label = "I am red!!",
+              node_aes = node_aes(fillcolor = "red",
+                                  fontsize = 5)) %>% 
+  add_n_nodes(2, 
+              label = "I am blue :-(",
+              node_aes = node_aes(fillcolor = "blue",
+                                  fontsize = 5)) %>% 
+  render_graph()
+
+# change to show a literal bag with gganimate moving things
+
+```
+
+Odds could be used to represent the ratio between red and blue marbles. Probability could represent the fraction of all marbles that are either red or that are blue^[Note that while probability is limited to the domain of 0 to 1, odds can take any positive rational number.]. 
+
+$$O(R) = \frac{R}{B}$$  
+$$P(R) = \frac{R}{B+R}$$  
+
+*Ratio for odds*^[You could say there are 5 to 2 (5:2) odds of selecting a red marble at random from the bag or, if you ran this exercise many times, you'd expect to select 2.5 times as many red marbles as blue marbles.]:
+
+```{r, fig.height = 2, fig.width = 2}
+tibble(color = c(rep("red", 5), rep("blue", 2)),
+       y = c(rep(.5, 5), rep(-.5, 2)), 
+       x = c(1:5, 2.5, 3.5)) %>% 
+  ggplot(aes(x = x, y = y, colour = color, size = 10))+
+  geom_hline(yintercept = 0, size = 3, colour = "black")+
+  geom_point()+
+  theme_void()+
+  guides(size = "none", colour = "none")+
+  scale_colour_manual(values = c(blue = "blue", red = "red"))
+  
+```
+
+*Fraction for probability*^[You'd say there is a $\frac{5}{7}ths$ chance of selecting a red marble, or that you would select a red marble ~71% of the time.]:
+
+```{r, fig.height = 2, fig.width = 2}
+tibble(color = c(rep("red", 5), rep("red", 5), rep("blue", 2)),
+       y = c(rep(.5, 5), rep(-.5, 7)), 
+       x = c(1:5, seq(0, 6, length.out = 7))) %>% 
+  ggplot(aes(x = x, y = y, colour = color, size = 10))+
+  geom_hline(yintercept = 0, size = 3, colour = "black")+
+  geom_point()+
+  theme_void()+
+  guides(size = "none", colour = "none")+
+  scale_colour_manual(values = c(blue = "blue", red = "red"))
+  
+```
+
+For odds (when there are only two possible outcomes^[I'll only be discussing problems with two possible outcomes.]) each outcome could be thought of as existing *either* in the numerator or in the denominator. For probabilities, the class of interest (e.g. red marbles) influences both sides.
+
+You can switch between odds and probabilities using the function below: 
+
+$$O = \frac{P}{1-P}$$
+
+However, the style of thinking for odds emphasizes the relationship *between* the frequencies of possible event, whereas probabilities emphasizes the relative frequency of a *particular* event^[I like to think of odds as being more egalitarian because, in the case of a binary outcome, both possible outcomes get their own side of the ratio/fraction. Probabilities are 'outcome of interest' centric in that the selected outcome affects both sides. Hence, if you believe in things like equality and freedom you should be a fan of odds and odds ratios!].
+
+Some problems lend themselves more naturally to probability and others to odds. I'll briefly reference some of these differences in [Other problems]. However for the remainder of the post I'll focus on where odds suggest an intuitive and consistent framework^[Afterall odds are the ones that need PR help.].
 
 ## Note on what American betting odds are
 
