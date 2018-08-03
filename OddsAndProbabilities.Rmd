@@ -1,5 +1,5 @@
 ---
-title: "The odd one out in stats class"
+title: "Use odds instead of probabilities, sometimes."
 subtitle: "Written: 2018-07-20"
 date: "`r paste('Last updated: ', format(Sys.time(), '%Y-%m-%d'))`"
 output: 
@@ -27,22 +27,23 @@ We grow up learning proportions, percentages, risks, probabilities.  You encount
 
 So that, in our modern cultural concsciousness, 'odds' are relegated to the shady domains of gambling, sports betting, and dystopian murder games. 
 
-The odds represent a more ancient form of understanding the relationship between potential outcomes. Yet, for most useful contexts, our society has largely forgotten them and supplanted 'odds' for 'probabilities'. See quote from Shakespeare's *Henry IV, Part II* dating back to the late 1500's:  
+Though human understanding of odds predates our formal understanding of probability. You can find references to odds dating back to Shakespeare:  
 
 >Knew that we ventured on such dangerous seas  
 >That if we wrought out life 'twas *ten to one*;
+> - Shakespeare's *Henry IV, Part II*, 1597
 
-You can imagine if he were writing today the second line  might read "'twas *one out of eleven*;" which doesn't have quite the same ring to it. 
+Yet, for most useful contexts, modern society has largely supplanted 'odds' for 'probabilities'. You can imagine if Shakespeare were writing today the line might end "'twas *ten out of eleven*;" which doesn't capture the doom of that moment with quite the same import. 
 
-Though beyond betting and playwriting, 'odds' are a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave this post with...
+Beyond betting and playwriting, 'odds' are a generally useful method for conceptualizing event distributions. In this post, I'll describe some of the excellent qualities of odds and odds ratios. My hope is you leave with...
 
-* an ability to describe the relationship between binary outcomes in terms of odds. If you're new to odds, start here [Ratios/fractions of events] before moving on to the next section..
+* an ability to describe the relationship between binary outcomes in terms of odds. If you're new to odds, start here [Ratios/fractions of events] before moving on to the next section.
 * an understanding of how the 'odds way' of framing a problem can be convenient for comparing event outcomes across contexts.
 * a simple heuristic for how to communicate 'odds' to the rest of the world.
 
 # Different contexts
 
-Say you're making chocolate milk and use 9 parts milk for every 1 part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup by adding in two more parts of chocolate so the milk to chocolate ratio in his cup is now 9:3 (simplified to 3:1). If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would be slightly more complex. 
+Say you're making chocolate milk and use 9 parts milk for every 1 part chocolate. Before you get the chance to have any, your little nephew comes over and tries a sip and says, "Yum, can I have that? But please, make it three times as chocolatey." The most intuitive way to please him would be to triple the amount of chocolate in the cup. You add two parts of chocolate so the milk to chocolate ratio in the cup is now 9:3, AKA 3:1. If instead you took his comment as saying he wanted the cup to be composed of $\frac{3}{10}ths$ chocolate instead of $\frac{1}{10}ths$ chocolate, your calculations to satisfy him would be slightly more complex. 
 
 In the same way that it can be easier to think of recipes as ratios rather than fractions out of a whole, it can be easier to think of event distributions in terms of odds rather than probabilities.
 
